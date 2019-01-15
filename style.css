@@ -1,0 +1,289 @@
+body
+{
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  bottom: 0;
+}
+
+#header-container
+{
+  width: 100%;
+  margin:0;
+  height:2.7cm;
+  background-color: white;
+  position:fixed;
+}
+
+#header-container  li
+{
+  border-style: solid;
+  border-color:#303030;
+  border-width: 1px;
+  color: #303030;
+  display: inline-table;
+  font-size: 11pt;
+  padding: 3%;
+  border-radius: 7px;
+  display: inline-block;
+  text-decoration: none;
+  list-style-type: none;
+  font-weight: normal;
+}
+
+#header-container a
+{
+  color: #303030;
+  text-decoration: none;
+}
+
+#header-container ul li:hover
+{
+  border-color: white;
+  background-color:black;
+  color:white;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+#header-container a:hover
+{
+  color: white;
+  text-decoration: none;
+}
+
+.navigation li
+{
+  display: inline-block;
+}
+
+aside
+{
+  background-color:transparent;
+  float: left;
+    margin-left: 0%;
+  width: 20%;
+  top: 18%;
+  height: 50%;
+
+}
+.presentation  li
+{
+  list-style-type: none;
+  color:  black;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  text-align: center;
+  padding-right: 1%;
+    border-radius: 7px;
+}
+
+.presentation ul
+{
+  padding: 0;
+  margin: 0;
+}
+
+.presentation a
+{
+  text-decoration: none;
+  color: #DFF2FF;
+  padding-left: 2%;
+}
+
+.presentation ul li:hover
+{
+  text-decoration: none;
+  background-color:rgba(225,225,225,0.8);
+    border-radius: 7px;
+    padding: 6%;
+    font-size: 16pt;
+    
+}
+
+.presentation a:hover
+{
+  color:#303030;
+}
+
+.logoucp
+{
+  margin-left: 5%;
+  width: 25%;
+  position: absolute;
+}
+
+.logodev
+{
+  margin-left:37%;
+  width: 40%;
+  position: absolute;
+}
+
+.logodev img
+{
+  top: 0;
+}
+
+.liste1
+{
+  margin-left: 15%;
+  width: 25%;
+  position: absolute;
+}
+
+.liste2
+{
+  margin-left: 68%;
+  width: 25%;
+  position: absolute;
+}
+
+.info
+{
+  width:40%;
+  background-color: gray;
+  opacity: .8;
+  margin-left: 7%;
+  margin-top: 15%;
+}
+
+.contact
+{
+  float: right;
+  width: 40%;
+  background-color: gray;
+  opacity: .8;
+  margin-right: 8%;
+  margin-top: 15%;
+}
+
+.info li
+{
+  list-style-type: none;
+  color:  #DFF2FF;
+  padding-top: 3.2%;
+  padding-bottom: 3.1%;
+  text-align: center;
+  padding-right: 1%;
+}
+
+.info ul
+{
+  padding: 0;
+  margin: 0;
+}
+
+.contact table
+{
+  margin-left: 23%;
+}
+
+.contact table tr th
+{
+  border-style: none;
+  font-size: 11pt;
+  font-style: normal;
+  color:#DFF2FF;
+  font-weight:normal;
+  text-indent: 20px;
+  padding-top: 3%;
+}
+
+.contact th img
+{
+  width: 30px;
+  height: 30px;
+  padding: 5%;
+  margin: 0;
+}
+
+
+.principal
+{
+  margin-left: 24%;
+  width: 55%;
+  padding-bottom: 0%;
+  background-color:transparent;
+}
+
+#presentionDeSite
+{
+  margin-top: 20%;
+}
+
+#presentionDeSite h2
+{
+  text-align: center;
+  font-size: 20pt;
+  color: #DFF2FF;
+  background-color: transparent;
+  width: 55%;
+margin-left: 24%}
+
+
+.lesmemebres h2{
+  text-align: center;
+  font-size: 20pt;
+  color: #DFF2FF;
+  margin-bottom:0;
+  background-color: transparent;
+  width: 55%;
+  margin-left: 24%;
+}
+
+.principal h3
+{
+  text-align: center;
+  color: white;
+  padding-top:8%;
+}
+
+.principal  p
+{
+  color:white;
+  font-size: 13pt;
+  padding-left: 3.3%;
+  margin-right: 4%;
+  text-align: justify;
+  text-indent: 3%;
+  padding-top: 2%;
+}
+
+.principal ul
+{
+  padding-left: 5%;
+  margin-right: 4%;
+  color:#DFF2FF;
+  font-size: 11pt;
+}
+
+
+.principal  a
+{
+  color :#DFF2FF;
+  padding-left: 9%;
+}
+div.centre {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -100px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
+
+footer
+{
+	font-size: 10pt;
+	bottom: 0;
+	background-color: #A9A9A9;
+	padding-bottom: 1%;
+	width: 100%;
+	height: 10%;	
+}
+
+
+

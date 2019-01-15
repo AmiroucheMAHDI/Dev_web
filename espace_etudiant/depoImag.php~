@@ -1,0 +1,35 @@
+<?php
+	session_start ();
+	if (!isset($_SESSION['username']) or !isset($_SESSION['password'])) {
+	header ('location: ./connexion_etudiant.php');
+	exit();
+}
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Étudiant");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+	//include_once("../include/fonctions.inc.php");
+	//require_once("../include/fonctions.inc.php");	
+?>
+<body>
+<div>
+	<header>
+		<h1 style="text-align:center ; color:white"> 	Trombinoscopes des formations </h1>
+		<nav> 	
+			<ul class="menu">	
+				<li><a href="../index.html">		Accueil		</a></li>
+				<li><a href="./connexion_etudiant.php">		Déconnexion		</a></li>		
+			</ul>
+		</nav>
+	</header>
+
+	<hr style="width:70% ; color:black;"/>
+	<section> 
+		<?php
+			echo formulaireDepoEtudiant();
+		?>
+	</section>
+	
+<?php 
+	require("../include/footer.inc.php");			
+?>

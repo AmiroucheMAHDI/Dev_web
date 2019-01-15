@@ -1,0 +1,32 @@
+<?php
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Étudiant");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+?>
+<body>
+
+	<div id="headerConnexionEtudiant">
+		<h1>Service Central d'Authentification de l'Étudiant</h1>	
+	</div>
+		
+	<div id="connexionEtudiant">
+		<?php
+		 echo formulaireConnexionEtudiant();
+	   ?>
+	   <?php 
+			if(isset($_COOKIE['username']) and isset($_COOKIE['password'])) {
+				$username = $_COOKIE['username'];
+				$password = $_COOKIE['password'];
+				
+				echo "<script>
+					document.getElementById('username').value = '$username';
+					document.getElementById('password').value = '$password';
+					</script>";
+			}
+		?>  
+	</div>
+
+<?php
+	echo footerConnexionEtudiant();
+?>

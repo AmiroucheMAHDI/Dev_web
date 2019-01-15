@@ -1,0 +1,76 @@
+<?php
+	session_start();
+	session_destroy();
+	if(isset($_COOKIE['username']) and isset($_COOKIE['password'])) {
+		$username = $_COOKIE['username'];
+		$password = $_COOKIE['password'];
+		setcookie('username', $username, time()-1);
+		setcookie('password', $password, time()-1);
+	}	
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Gestionnaire");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+?>
+<body>
+	<div id="headerConnexionEtudiant">
+		<h1>Espace Gestionnaire </h1>	
+	</div>
+		
+	<div id="connexionEtudiant">
+			<nav>
+	<ul>
+		<li><a href="./logout.php">Déconnexion</a></li>
+		<li><a href="./gestionnaire.php">Filières/Groupes</a></li>
+		<li><a href="./gestionnaire_Ajouter_Enseignant.php">Professeurs/Sécritaires</a></li>
+	</ul>
+	<hr style="margin-left:20%;margin-right:20%;"/>
+</nav>
+<section style="height: 520px;">
+		<h2 style="text-align:center;">Gestion des Professeurs/Sécritaires</h2>
+		<?php
+			echo formulaire_ajouter_enseignat();
+			if(isset($_POST['nom']) && isset($_POST['prenom'])	&& isset($_POST['ID'])  && isset($_POST['mdp'])){
+				$nom=$_POST['nom'];
+				$prenom=$_POST['prenom'];
+				$id=$_POST['ID'];
+				$mdp=$_POST['mdp'];	
+				// Ajouter professeur/secritaire:
+				
+
+				if(isset($_POST['ajouter'])){
+					$hashedPassWord=password_hash($_POST['mdp'],PASSWORD_DEFAULT);
+					$listData = array($_POST['nom'],$_POST['prenom'],$_POST['ID'],$hashedPassWord);
+					if(!existeLineCSV("./identificationEnseignant.csv",$listData)){
+							writeDataEnseignat("./identificationEnseignant.csv",$nom,$prenom,$id,$mdp);
+							echo"<p style='margin-left:32%; color:green;'>Professeur ajouté avec succès!</p>\n";
+						}else {
+							echo"<p style='margin-left:32%; color:red;'>Ce professeur existe déjà!</p>\n";
+						}
+					
+			
+
+				// Supprimer professeur/sécritaire:
+
+				if(isset($_POST['supprimer'])){
+					$hashedPassWord=password_hash($_POST['mdp'],PASSWORD_DEFAULT);
+					$listWords = array($_POST['nom'],$_POST['prenom'],$_POST['ID'],$hashedPassWord);
+						$remove = deleteLineText("./identificationEnseignant.csv",$listWords);
+						return $remove;
+						if($remove) {
+							echo"<p style='margin-left:32%; color:green;'>Professeur supprimé avec succès!</p>\n";
+						}
+						else {
+							echo"<p style='margin-left:32%; color:red;'>Professeur inexistant!</p>\n";
+						}
+									
+				}
+	}
+}
+
+			
+		?>
+</section>
+<?php
+	echo footerConnexionEtudiant();
+?>

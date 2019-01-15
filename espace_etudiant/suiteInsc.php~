@@ -1,0 +1,50 @@
+<?php
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Étudiant");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+	//include_once("../include/fonctions.inc.php");
+	//require_once("../include/fonctions.inc.php");
+	
+?>
+<body>
+
+	<header>
+		<h1 style="text-align:center ; color:white"> 	Trombinoscopes des formations </h1>
+		<nav> 	
+			<ul class="menu">	
+				<li><a href="../index.html">		Accueil		</a></li>
+				<li><a href="./connexion_etudiant.php">		Connexion		</a></li>		
+			</ul>
+		</nav>
+	</header>
+
+	<hr style="width:70% ; color:black;"/>
+<section> 
+	<?php
+
+		 if(isset($_POST['NumEtu']) && isset($_POST['familyName']) && isset($_POST['firstName'])&& isset($_POST['Pi'])){
+				// Ajouter un Etudaint
+				$numeroDeEtudiant=$_POST['NumEtu'];
+	 			$nom=$_POST['familyName'];
+			   $prenom=$_POST['firstName'];
+			   $dateDepremiereIN=$_POST['Pi'];
+	 			$Date_de_naissance=$_POST['dateNai'];
+	 			$filiere=$_POST['filiere'];
+	 			 
+				
+					if(!existeLineCSV('./identification.csv',$listData)){
+							writeData('./identification.csv',$numeroDeEtudiant,$nom,$prenom,$dateDepremiereIN,$Date_de_naissance,$filiere,$Date_de_naissance);
+							echo"<p style='margin-left:32%; color:green;'>Étudiant ajouté avec succès!<br/> votre mot de passe est votre dante de naissance par défaut</p>\n";
+						}else{
+							echo"<p style='margin-left:32%; color:red;'>Étudiant existe déjà!</p>\n";
+						}
+			}
+	?>
+	
+	
+</section>
+	
+<?php 
+	require("../include/footer.inc.php");			
+?>

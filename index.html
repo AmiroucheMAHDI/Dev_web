@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<link rel="Stylesheet" href="./style.css" type="text/css" />
+<title>U-Cergy-Trombinoscopes</title>
+<style>
+.menu{
+position: fixed;
+margin-top: 5%;
+}
+nav{
+width: 100%;
+font-size: 13pt;
+height: 1cm;
+}
+nav ul li:hover {
+ text-decoration: none;
+ background-color:#CECECE;
+ color: black;
+}
+nav a:hover{
+ color: #303030;
+}
+nav ul {
+  background-color: gray;
+  text-align: center;
+ }
+nav li {
+ display: inline-block;
+ padding: 0.40cm;
+ text-decoration: none;
+ }
+nav a {
+ color: #DFF2FF;
+ text-decoration: none;
+}
+ul ul {
+position: absolute;
+visibility: hidden;
+padding-top:5px;
+}
+ul ul li a{
+clear: both;
+width: auto;
+display: block;
+text-align: center;
+width: 180px;
+
+color: white;
+
+
+ 
+}
+ ul li:hover ul{
+visibility: visible;}
+
+</style>
+</head>
+<body id="Accueil"   style="background-image : url(img/Saint-Martin.jpg)">
+	<header  id="header-container" style="Top:0;">
+	<h1 style="visibility: hidden; font-size: 2pt;">titre</h1>
+		
+		
+		<div  class="logoucp">
+		<a href="https://www.u-cergy.fr/fr/index.html">
+		<img  src="img/logo-cergy100.png" alt="logo de cergy-pontoise" style="width:100px"></a>
+      </div>
+      <div class="liste1">
+		<ul>
+            <li><a href="index.html">Accueil</a></li>
+			<li style="padding-left: 1%; padding-right: 1%;"><a href="connexion.html">Connexion</a>
+			
+			</li>
+			
+		</ul>
+		</div>
+		<div  class="logodev" >
+		<a href="./index.html" ><img src="img/avonne1.jpg" alt="Dev Web" style="width:300px"></a>
+	  </div>
+	  <div  class="liste2">
+		<ul>
+			
+			
+			<li style="padding-left: 7%; padding-right: 7%; "><a href="#">Aide</a></li>
+			<li><a href="https://depinfo.u-cergy.fr/contacts">Contact</a></li>
+		</ul>
+		</div>
+		
+	</header>
+<div style="background-color:rgba(0,0,0,0.6); padding-top:10%; padding-bottom:20%; margin-bottom:0%;">
+<aside class="presentation" style="position:fixed;">
+<ul>
+<li><a href="#presentionDeSite">Présentation de site</a></li>
+<li><a href="#administrateur">Administrateurs</a></li>
+<li><a href="#enseignantEtSecretaire">Enseignants/Secrétaires</a></li>
+<li><a href="#etudiants">Étudiants</a></li>
+</ul>
+
+</aside>
+
+<section  id="presentionDeSite">
+			<h2 style="text-align:center">Trombinoscopres des étudiants d'informatique </h2>
+			<article class="principal" >
+				<h3>Qu'est-ce que un trombinoscope ?</h3>
+				<p>
+				Un trombinoscope est un ensemble de photos individuelles avec nom et prénom des personnes
+				</p>
+				<h3>L'objectid de ce site</h3>
+				<p>
+				    Il n’existe pas actuellement de solution centralisée pour générer les trombinoscopes1
+ des formations
+et des groupes de TD / TP : chaque secrétaire pédagogique ou enseignant est amené à réaliser de façon
+isolée et non standardisée sa propre solution artisanale de trombinoscope, voire de renoncer à ce
+trombinoscope lorsque les problèmes logistiques de construction deviennent trop importants.
+Ce site vient comme solution web de construction et de  visualisation de
+trombinoscopes des étudiants d'informatique (L1
+MIPI + L2 MI + L3 I + L1 CMI ST + …) du l'uiversité de Cergy Pontoise site de Saint Martin
+				    
+				</p>
+			</article>
+		</section>
+		<section class="lesmemebres" id="administrateur" >
+			<h2></h2>
+			<article  class="principal" >
+				<h3>Les Administrateurs de site</h3>
+				<p>
+				    Le gestionnaire du site qui active les créations de filières et de groupes donc la génération de
+                      l’arborescence de dossiers (donc aussi la suppression ultérieure de ces dossiers) 
+                     et qui communique  un login et un password pour les enseignants et les
+                    secrétaires pédagogiques.
+				
+				</p>
+			
+			</article>
+			</section>
+			<section class="lesmembres" id="enseignantEtSecretaire">
+				<article  class="principal" >
+				<h3>Les enseignats et les secrétaires pédagogiques</h3>
+				<p>
+				    Les secrétaires pédagogiques et les enseignants doivent utiliser un mécanisme de session (sur la
+base du login / password communiqué par le gestionnaire) pour pouvoir accéder aux
+trombinoscopes. Chaque trombinoscope est généré par filière ou groupe TD / TP sur une page
+web avec des options de mises en page
+				
+				</p>
+					</article>
+			</section>
+			
+		<section id="etudiants" class="lesmembres">
+				<article  class="principal" >
+				<h3>Étudiants</h3>
+				<p>
+				    Les étudiants doivent choisir leur formation et leur groupe de TD (voire de TP) dans des
+listes prédéfinies(l'étudiant renseigne son nom et prénom et choisit sa filière et son groupe de TP) pour pouvoir déposer
+une photo personnelle pour le trombinoscope.
+				
+				</p>
+			
+			</article>
+	     
+		    
+		</section>
+    </div>
+
+<footer style="margin-battm">
+					<p class="p1">
+						<a href="./index.html" style="margin-right:0;">Retour</a>
+					</p>
+					
+						<p style="text-align:center">ABDELHAMID-MAHDI<br/>
+						||copyright 2018||</p>
+						<p style="text-align:center"><a href="https://www.u-cergy.fr/fr/index.html">Université de Cergy Pontoise</a></p>
+						</p>
+</footer>
+</body>
+</html>

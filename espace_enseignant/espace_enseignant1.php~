@@ -1,0 +1,48 @@
+<?php
+
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Enseignant");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+	
+?>
+	
+	<?php
+		
+		if(isset($_POST['groupe'])){
+						echo '<body>
+	<div id="headerConnexionEtudiant">
+		<h1>Espace Enseignant/Sécritaires</h1>	
+	</div>
+		
+	<div id="connexionEtudiant">
+			<nav>
+					<ul>
+						<li><a href="./logout.php">Déconnexion</a></li>
+					</ul>
+					<hr style="margin-left:20%;margin-right:20%;"/>
+			</nav>
+	<h2 style="text-align:center;">Afficher un trombinoscope :</h2>';
+						if(!empty($_POST['groupe'])){
+								echo formulaireDaffichage1();
+								echo footerConnexionEtudiant();
+						}else {
+		echo'	<body>
+										<div id="headerConnexionEtudiant">
+										<h1>Espace Enseignant/Sécritaires</h1>	
+										</div>
+		
+										<div id="connexionEtudiant">
+										<nav>
+										<ul>
+										<li><a href="./logout.php">Déconnexion</a></li>
+										</ul>
+										<hr style="margin-left:20%;margin-right:20%;"/>
+										</nav>
+										<h2 style="text-align:center;">Afficher un trombinoscope :</h2>';
+										echo formulaireDaffichage();
+										echo'<p style="text-align:center; color:red;"> vous douvez choisir la filiére avant de choisir le groupe </p>';
+										echo footerConnexionEtudiant();
+							}
+	}
+	?>

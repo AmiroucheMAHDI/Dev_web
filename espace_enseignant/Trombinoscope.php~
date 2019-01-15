@@ -1,0 +1,50 @@
+<?php
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Enseignant");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+	//include_once("../include/fonctions.inc.php");
+	//require_once("../include/fonctions.inc.php");
+	
+?>
+<body>
+
+<div>
+	<header>
+		<h1 style="text-align:center ; color:white"> 	Trombinoscopes  </h1>
+		<nav> 	
+			<ul class="menu"  >	
+				<li><a href="../index.html">		Accueil		</a></li>
+						
+			</ul>
+		</nav>
+	</header>
+
+	<hr style="width:70% ; color:black;"/>
+	<section> 
+		<article id="exo3">
+			
+			
+			<div>
+				<?php
+					echo formulaireConnexionEnseignant();
+				?>
+				<?php
+					//inscription("identification.csv","YAHIAOUI","Anis","yahiaoui","1234");
+					if(isset($_POST['connexion'])){
+						if(!empty($_POST['username']) && !empty($_POST['password'])){
+							echo validation('./identification.csv',$_POST['username'],$_POST['password']);
+						}
+					}
+				?>
+			</div>
+		</article>
+			
+
+	</section>
+	
+</div>
+
+<?php 
+	require("../include/footer.inc.php");			
+?>

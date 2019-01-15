@@ -1,0 +1,58 @@
+<?php
+	session_start ();
+	if (!isset($_SESSION['username']) or !isset($_SESSION['password'])) {
+	header ('location: ./connexion_enseignant.php');
+	exit();
+}
+	include_once("../include/fonctions.inc.php");
+	echo title_page("Espace Enseignant");
+	include_once("../include/util.inc.php");
+	include_once("../include/header.inc.php");
+	
+?>
+<body>
+
+<div>
+	<header>
+		<h1 style="text-align:center ; color:white"> 	Arborescence  </h1>
+		<nav> 	
+			<ul class="menu"  >	
+				<li><a href="../index.html">		Accueil		</a></li>
+				<li><a href="./connexion_enseignant.php">		Déconnexion		</a></li>
+						
+			</ul>
+			<hr/>
+		</nav>
+		
+	</header>
+	
+	<?php 
+	function mkmap($dir){ 
+	echo "<ul>"; 
+	$folder = opendir ($dir); 
+	while ($file = readdir ($folder)) { 
+	if ($file != "." && $file != "..") { 
+	$pathfile = $dir.'/'.$file; 
+	echo "<li style=' font-family: Arial, sans-serif;
+  font-size: 100%;
+  color: black;
+  display : list-item;
+  list-style-image : url(folder.png)'
+  >
+  <a href=$pathfile>$file</a></li>"; 
+	if(filetype($pathfile) == 'dir'){ mkmap($pathfile); } } } 
+	closedir ($folder); 
+	echo "</ul>"; } ?> 
+
+
+	<?php mkmap('../arborescence'); ?>
+
+
+	<hr style="width:70% ; color:black;"/>
+
+	
+</div>
+
+<?php 
+	require("../include/footer.inc.php");			
+?>
