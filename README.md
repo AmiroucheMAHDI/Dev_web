@@ -1,2 +1,2 @@
-# Dev_web
-projet du développement web
+# Développement web (trombinoscope)
+projet du développement web pour l'université de Cergy-Pontoise
